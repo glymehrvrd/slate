@@ -2591,7 +2591,7 @@ static int jk_encode_add_atom_to_buffer(JKEncodeState *encodeState, void *object
   //     gains in the two to three percent range.
   //
   // XXX XXX XXX XXX
-
+    
   BOOL workAroundMacOSXABIBreakingBug = NO;
   if(JK_EXPECT_F(((NSUInteger)object) & 0x1)) { workAroundMacOSXABIBreakingBug = YES; goto slowClassLookup; }
 

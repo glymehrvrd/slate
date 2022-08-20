@@ -20,7 +20,6 @@
 
 #import "TestShellUtils.h"
 #import "ShellUtils.h"
-#import "ShellOperation.h"
 
 @implementation TestShellUtils
 
@@ -52,13 +51,6 @@
   NSRegularExpression *testRegex = [NSRegularExpression regularExpressionWithPattern:@"with single and double quotes" options:0 error:&err];
   int found = [testRegex numberOfMatchesInString:result options:0 range:NSMakeRange(0, [result length])];
   XCTAssertEqual(found, 1, @"Result should include all strings");
-}
-
-- (void)testShellOperationFromStringWithQuotesAndSpaces {
-	id operation = [ShellOperation shellOperationFromString:@"shell '/usr/bin/open -a \"/Applications/App Store.app\"'"];
-	NSUInteger argumentCount = [[operation args] count];
-	
-	XCTAssertEqual(argumentCount, 2, @"The shell operation must only contain two arguments");
 }
 
 @end
